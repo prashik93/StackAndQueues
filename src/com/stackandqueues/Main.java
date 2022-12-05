@@ -2,7 +2,12 @@ package com.stackandqueues;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Welcome to Stack and Queue !");
+        new Main().stack();
+        new Main().queue();
+    }
+
+    public void stack() {
+        System.out.println("Welcome to Stack !");
         MyNode<Integer> myFirstNode = new MyNode<>(70);
         MyNode<Integer> mySecondNode = new MyNode<>(30);
         MyNode<Integer> myThirdNode = new MyNode<>(56);
@@ -26,5 +31,19 @@ public class Main {
         boolean afterAdding = myStack.isEmpty();
         System.out.println("After pushing Nodes : " + afterAdding);
         myStack.printStack();
+    }
+
+    public void queue() {
+        System.out.println("\nWelcome to Queue !");
+        MyNode<Integer> myFirstNode = new MyNode<>(56);
+        MyNode<Integer> mySecondNode = new MyNode<>(30);
+        MyNode<Integer> myThirdNode = new MyNode<>(70);
+        MyQueue<Integer> myQueue = new MyQueue<>();
+
+        myQueue.enqueue(myFirstNode);
+        myQueue.enqueue(mySecondNode);
+        myQueue.enqueue(myThirdNode);
+
+        myQueue.printQueue();
     }
 }
