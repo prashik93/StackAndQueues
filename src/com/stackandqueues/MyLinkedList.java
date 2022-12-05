@@ -8,6 +8,31 @@ public class MyLinkedList<K> {
 
     }
 
+    public int size() {
+        if(this.head != null) {
+            INode<K> tempNode = this.head;
+            int count = 1;
+            while(tempNode.getNext() != null) {
+                count++;
+                tempNode = tempNode.getNext();
+            }
+            return count;
+        }
+        return 0;
+    }
+    public boolean isEmpty() {
+        if(this.head == null) {
+            return true;
+        }
+        return false;
+    }
+
+    public INode<K> pop() {
+        INode<K> tempNode = this.head;
+        this.head = tempNode.getNext();
+        return tempNode;
+    }
+
     public void add(INode<K> newNode) {
         if(this.tail == null) {
             this.tail = newNode;
@@ -24,13 +49,14 @@ public class MyLinkedList<K> {
     public void printMyNodes() {
         StringBuffer myNodes = new StringBuffer(("My Nodes : "));
         INode<K> tempNode = head;
-        while(tempNode.getNext() != null) {
+        if(this.head != null) {
+            while (tempNode.getNext() != null) {
+                myNodes.append(tempNode.getKey());
+                if (!tempNode.equals(tail)) myNodes.append("->");
+                tempNode = tempNode.getNext();
+            }
             myNodes.append(tempNode.getKey());
-            if(!tempNode.equals(tail)) myNodes.append("->");
-            tempNode = tempNode.getNext();
-        }
-        myNodes.append(tempNode.getKey());
-        System.out.println(myNodes);
-
+            System.out.println(myNodes);
+        } else System.out.println("Stack is Empty");
     }
 }

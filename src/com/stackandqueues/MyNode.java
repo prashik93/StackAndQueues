@@ -31,8 +31,7 @@ public class MyNode<K> implements INode<K>{
     @Override
     public String toString() {
         return "MyNode{" +
-                "key=" + key +
-                ", next=" + next +
+                key +
                 '}';
     }
 }
