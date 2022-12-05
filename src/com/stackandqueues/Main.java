@@ -40,9 +40,20 @@ public class Main {
         MyNode<Integer> myThirdNode = new MyNode<>(70);
         MyQueue<Integer> myQueue = new MyQueue<>();
 
+        boolean beforeAdding = myQueue.isEmpty();
+        System.out.println("Before enqueue the Nodes : " + beforeAdding);
         myQueue.enqueue(myFirstNode);
         myQueue.enqueue(mySecondNode);
         myQueue.enqueue(myThirdNode);
+
+        INode<Integer> dequeue = myQueue.dequeue();
+        System.out.println("Dequeue element from Queue : " + dequeue);
+
+        boolean afterAdding = myQueue.isEmpty();
+        System.out.println("After enqueue the Nodes : " + afterAdding);
+
+        int size = myQueue.size();
+        System.out.println("Size of the Queue is : " + size);
 
         myQueue.printQueue();
     }

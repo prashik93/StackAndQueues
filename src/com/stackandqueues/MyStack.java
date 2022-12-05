@@ -21,12 +21,15 @@ public class MyStack<K> {
 
     public INode<K> pop () {
         int size = myLinkedList.size();
-        int count = 1;
-        while (count < size) {
-            count++;
-            myLinkedList.pop();
+        if(size > 0) {
+            int count = 1;
+            while (count < size) {
+                count++;
+                myLinkedList.pop();
+            }
+            return myLinkedList.pop();
         }
-        return myLinkedList.pop();
+        return null;
     }
 
     public void push(INode<K> myNode) {
@@ -34,6 +37,7 @@ public class MyStack<K> {
     }
 
     public void printStack() {
+        System.out.print("Stack" + " ");
         myLinkedList.printMyNodes();
     }
 }

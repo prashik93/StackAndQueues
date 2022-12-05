@@ -69,6 +69,6 @@ public class MyLinkedList<K> {
             }
             myNodes.append(tempNode.getKey());
             System.out.println(myNodes);
-        } else System.out.println("Stack is Empty");
+        } else System.out.println("is Empty");
     }
 }
